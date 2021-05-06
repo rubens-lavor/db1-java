@@ -1,14 +1,13 @@
 package application;
 
-import original.PasswordMeterV1;
-
-import java.util.Locale;
+import original.VerificadorDeSenha;
 
 public class Program {
     public static void main(String[] args) {
-        Locale.setDefault(Locale.US);
-        PasswordMeterV1 password = new PasswordMeterV1();
-        password.checkPassword("12*35*6a");
-        System.out.print(password.toString());
+
+        VerificadorDeSenha senha1;
+        senha1 = new VerificadorDeSenha("rubens123AçÇj");
+
+        System.out.print(senha1.toString());
     }
 }
