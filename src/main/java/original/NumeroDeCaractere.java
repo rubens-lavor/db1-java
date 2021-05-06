@@ -3,14 +3,6 @@ package original;
 public class NumeroDeCaractere extends IncrementaForcaDaSenha {
 
         public NumeroDeCaractere(String senha) {
-        /*
-        super(senha);
-        this.peso = 4;
-        this.bonus = 0;
-        this.contagem = 0;
-        calculoContagem(senha);
-        calculoBonus(senha);
-        */
             peso = 4;
             this.senha = senha;
             calculoContagem();

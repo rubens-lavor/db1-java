@@ -11,7 +11,6 @@ public class NumeroOuSimboloNoMeio extends IncrementaForcaDaSenha {
         calculoContagem();
         calculoBonus();
 
-        // if (contagem > 0) checkRequerimentos();
     }
 
     @Override
@@ -19,15 +18,14 @@ public class NumeroOuSimboloNoMeio extends IncrementaForcaDaSenha {
 
 
         for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[A-Z]")) {
-            } else if (arrPwd[i].matches("[a-z]")) {
-            } else if (arrPwd[i].matches("[0-9]")) {
+            if (arrPwd[i].matches("[A-Z]")) { }
+            else if (arrPwd[i].matches("[a-z]")) { }
+
+            else if (arrPwd[i].matches("[0-9]")) {
                 if (i > 0 && i < arrPwd.length - 1) {
                     contagem++;
                 }
             } else if (arrPwd[i].matches("[^a-zA-Z0-9_]")) {
-                // (arrPwd[i].matches("[^a-zA-Z0-9_]"))
-                // (arrPwd[i].matches("[_A-Za-z0-9-\\\\+]+"))
                 if (i > 0 && i < arrPwd.length - 1) {
                     contagem++;
                 }

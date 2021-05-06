@@ -2,6 +2,7 @@ package original;
 
 public class NumeroDeCaractereEspecial extends IncrementaForcaDaSenha {
     String[] arrPwd;
+
     public NumeroDeCaractereEspecial(String senha) {
         peso = 6;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
@@ -18,6 +19,7 @@ public class NumeroDeCaractereEspecial extends IncrementaForcaDaSenha {
             if (arrPwd[i].matches("[A-Z]")) {
             } else if (arrPwd[i].matches("[a-z]")) {
             } else if (arrPwd[i].matches("[0-9]")) { }
+
             else if (arrPwd[i].matches("[^a-zA-Z0-9_]")) {
                 contagem++;
             }

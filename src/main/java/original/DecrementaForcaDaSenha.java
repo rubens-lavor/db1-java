@@ -5,12 +5,6 @@ public abstract class DecrementaForcaDaSenha {
     protected int contagem;
     protected int bonus;
 
-    /*
-    public DecrementaForcaDaSenha() {
-        // super(senha);
-    }
-     */
-
     public int obterBonus(){
         return bonus;
     }

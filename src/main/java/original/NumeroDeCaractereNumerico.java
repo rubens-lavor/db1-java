@@ -2,6 +2,7 @@ package original;
 
 public class NumeroDeCaractereNumerico extends IncrementaForcaDaSenha{
     String[] arrPwd;
+
     NumeroDeCaractereNumerico (String senha) {
         peso = 4;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");

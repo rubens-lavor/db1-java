@@ -17,8 +17,6 @@ public class NumeroDeLetraMinuscula extends IncrementaForcaDaSenha {
 
     @Override
     public void calculoContagem() {
-        // String[] arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
-
         for (int i = 0; i < arrPwd.length; i++) {
             if (arrPwd[i].matches("[a-z]")) {
                 contagem++;

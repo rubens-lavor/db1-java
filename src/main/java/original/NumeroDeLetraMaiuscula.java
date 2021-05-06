@@ -32,9 +32,4 @@ public class NumeroDeLetraMaiuscula extends IncrementaForcaDaSenha {
         bonus = (senha.length() - contagem) * peso;
     }
 
-    /*
-    public int obterContagem(int x) {
-        return x;
-    }
-     */
 }

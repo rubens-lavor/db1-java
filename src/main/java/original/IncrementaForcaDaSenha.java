@@ -1,8 +1,5 @@
 package original;
 
-
-import java.util.Arrays;
-
 public abstract class IncrementaForcaDaSenha {
     protected int peso = 0;
     protected int contagem;
@@ -12,20 +9,6 @@ public abstract class IncrementaForcaDaSenha {
     //private String[] requerimentos = new String[8];
     private static int indiceRequerimentos = 0;
 
-    /*
-
-    public IncrementaForcaDaSenha() {
-        // super(senha);
-    }
-
-
-    public int obterBonus(){
-        return bonus;
-    }
-    public int obterContagem() {
-        return contagem;
-    }
-    */
 
     public int obterBonus(){
         return bonus;

@@ -2,17 +2,17 @@ package original;
 
 public class VerificadorDeSenha {
     private int forcaDaSenha = 0;
-    private String senha = "vazia";
-    private String estado;
+    private final String senha;
+    //private String estado;
 
 
-    private NumeroDeCaractere numeroDeCaractere;
-    private NumeroDeLetraMinuscula numeroDeLetraMinuscula;
-    private NumeroDeLetraMaiuscula numeroDeLetraMaiuscula;
+    private final NumeroDeCaractere numeroDeCaractere;
+    private final NumeroDeLetraMinuscula numeroDeLetraMinuscula;
+    private final NumeroDeLetraMaiuscula numeroDeLetraMaiuscula;
     private final NumeroDeCaractereNumerico numeroDeCaractereNumerico;
-    private NumeroDeCaractereEspecial numeroDeCaractereEspecial;
-    private NumeroOuSimboloNoMeio numeroOuSimboloNoMeio;
-    private NumeroDeRequerimentos numeroDeRequerimentos;
+    private final NumeroDeCaractereEspecial numeroDeCaractereEspecial;
+    private final NumeroOuSimboloNoMeio numeroOuSimboloNoMeio;
+    private final NumeroDeRequerimentos numeroDeRequerimentos;
 
     public VerificadorDeSenha(String senha) {
         this.senha = senha;
@@ -28,11 +28,6 @@ public class VerificadorDeSenha {
     }
 
     void checarSenha() {
-        /*
-        var eu = new AdicionarNumeroCaracteres();
-        contagem = eu.calculoContagem(senha);
-        bonus = eu.calculoBonus(contagem);
-         */
 
         if (numeroDeCaractere.contagem != 0) setForcaDaSenha(numeroDeCaractere.contagem);
         if (numeroDeLetraMaiuscula.contagem != 0) setForcaDaSenha(numeroDeLetraMaiuscula.contagem);
