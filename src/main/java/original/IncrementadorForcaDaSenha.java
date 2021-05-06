@@ -1,12 +1,11 @@
 package original;
 
-public abstract class IncrementaForcaDaSenha {
+public abstract class IncrementadorForcaDaSenha {
     protected int peso = 0;
     protected int contagem;
     protected int bonus;
     protected String senha = "";
 
-    //private String[] requerimentos = new String[8];
     private static int indiceRequerimentos = 0;
 
 
@@ -26,7 +25,7 @@ public abstract class IncrementaForcaDaSenha {
         return indiceRequerimentos;
     }
 
-    public abstract void calculoContagem();
-    public abstract void calculoBonus();
+    public abstract void calcularContagem();
+    public abstract void calcularBonus();
 }
 

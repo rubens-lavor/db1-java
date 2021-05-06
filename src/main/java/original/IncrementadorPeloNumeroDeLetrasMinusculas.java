@@ -1,22 +1,22 @@
 package original;
 
-public class NumeroDeLetraMinuscula extends IncrementaForcaDaSenha {
+public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForcaDaSenha {
     String[] arrPwd;
 
-    public NumeroDeLetraMinuscula(String senha) {
+    public IncrementadorPeloNumeroDeLetrasMinusculas(String senha) {
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
         peso = 2;
 
-        calculoContagem();
-        calculoBonus();
+        calcularContagem();
+        calcularBonus();
 
         if (contagem > 0) checkRequerimentos();
     }
 
 
     @Override
-    public void calculoContagem() {
+    public void calcularContagem() {
         for (int i = 0; i < arrPwd.length; i++) {
             if (arrPwd[i].matches("[a-z]")) {
                 contagem++;
@@ -25,7 +25,7 @@ public class NumeroDeLetraMinuscula extends IncrementaForcaDaSenha {
     }
 
     @Override
-    public void calculoBonus() {
+    public void calcularBonus() {
         bonus = (senha.length() - contagem) * peso;
     }
 }

@@ -1,6 +1,6 @@
 package original;
 
-public abstract class DecrementaForcaDaSenha {
+public abstract class DecrementadorForcaDaSenha {
     protected int peso = 0;
     protected int contagem;
     protected int bonus;

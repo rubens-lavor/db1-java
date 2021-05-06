@@ -6,36 +6,36 @@ public class VerificadorDeSenha {
     //private String estado;
 
 
-    private final NumeroDeCaractere numeroDeCaractere;
-    private final NumeroDeLetraMinuscula numeroDeLetraMinuscula;
-    private final NumeroDeLetraMaiuscula numeroDeLetraMaiuscula;
-    private final NumeroDeCaractereNumerico numeroDeCaractereNumerico;
-    private final NumeroDeCaractereEspecial numeroDeCaractereEspecial;
-    private final NumeroOuSimboloNoMeio numeroOuSimboloNoMeio;
-    private final NumeroDeRequerimentos numeroDeRequerimentos;
+    private final IncrementadorPeloNumeroDeCaracteres incrementadorPeloNumeroDeCaracteres;
+    private final IncrementadorPeloNumeroDeLetrasMinusculas incrementadorPeloNumeroDeLetrasMinusculas;
+    private final IncrementadorPeloNumeroDeLetrasMaiusculas incrementadorPeloNumeroDeLetrasMaiusculas;
+    private final IncrementadorPeloNumeroDeCaracteresNumericos incrementadorPeloNumeroDeCaracteresNumericos;
+    private final IncrementadorPeloNumeroDeCaracteresEspeciais incrementadorPeloNumeroDeCaracteresEspeciais;
+    private final IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha;
+    private final IncrementadorPeloNumeroDeRequerimentos incrementadorPeloNumeroDeRequerimentos;
 
     public VerificadorDeSenha(String senha) {
         this.senha = senha;
 
-        numeroDeCaractere = new NumeroDeCaractere(senha);
-        numeroDeLetraMaiuscula = new NumeroDeLetraMaiuscula(senha);
-        numeroDeLetraMinuscula = new NumeroDeLetraMinuscula(senha);
-        numeroDeCaractereNumerico = new NumeroDeCaractereNumerico(senha);
-        numeroDeCaractereEspecial = new NumeroDeCaractereEspecial(senha);
-        numeroOuSimboloNoMeio = new NumeroOuSimboloNoMeio(senha);
-        numeroDeRequerimentos = new NumeroDeRequerimentos();
+        incrementadorPeloNumeroDeCaracteres = new IncrementadorPeloNumeroDeCaracteres(senha);
+        incrementadorPeloNumeroDeLetrasMaiusculas = new IncrementadorPeloNumeroDeLetrasMaiusculas(senha);
+        incrementadorPeloNumeroDeLetrasMinusculas = new IncrementadorPeloNumeroDeLetrasMinusculas(senha);
+        incrementadorPeloNumeroDeCaracteresNumericos = new IncrementadorPeloNumeroDeCaracteresNumericos(senha);
+        incrementadorPeloNumeroDeCaracteresEspeciais = new IncrementadorPeloNumeroDeCaracteresEspeciais(senha);
+        incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha = new IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha(senha);
+        incrementadorPeloNumeroDeRequerimentos = new IncrementadorPeloNumeroDeRequerimentos();
 
     }
 
     void checarSenha() {
 
-        if (numeroDeCaractere.contagem != 0) setForcaDaSenha(numeroDeCaractere.contagem);
-        if (numeroDeLetraMaiuscula.contagem != 0) setForcaDaSenha(numeroDeLetraMaiuscula.contagem);
-        if (numeroDeLetraMinuscula.contagem != 0) setForcaDaSenha(numeroDeLetraMinuscula.contagem);
-        if (numeroDeCaractereNumerico.contagem != 0) setForcaDaSenha(numeroDeCaractereNumerico.contagem);
-        if (numeroDeCaractereEspecial.contagem != 0) setForcaDaSenha(numeroDeCaractereEspecial.contagem);
-        if (numeroOuSimboloNoMeio.contagem != 0) setForcaDaSenha(numeroOuSimboloNoMeio.contagem);
-        if (numeroDeRequerimentos.contagem != 0) setForcaDaSenha(numeroDeRequerimentos.contagem);
+        if (incrementadorPeloNumeroDeCaracteres.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeCaracteres.contagem);
+        if (incrementadorPeloNumeroDeLetrasMaiusculas.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeLetrasMaiusculas.contagem);
+        if (incrementadorPeloNumeroDeLetrasMinusculas.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeLetrasMinusculas.contagem);
+        if (incrementadorPeloNumeroDeCaracteresNumericos.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeCaracteresNumericos.contagem);
+        if (incrementadorPeloNumeroDeCaracteresEspeciais.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeCaracteresEspeciais.contagem);
+        if (incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha.contagem);
+        if (incrementadorPeloNumeroDeRequerimentos.contagem != 0) setForcaDaSenha(incrementadorPeloNumeroDeRequerimentos.contagem);
 
         //forcaDaSenha = 10;
     }
@@ -56,13 +56,13 @@ public class VerificadorDeSenha {
                 + "\nComplexity: " + obterComplexidade()
 
                 + "\nAddictions"
-                + "\n[C: " + numeroDeCaractere.contagem + " | B: " + numeroDeCaractere.bonus + "] Number of Characters"
-                + "\n[C: " + numeroDeLetraMaiuscula.contagem + " | B: " + numeroDeLetraMaiuscula.bonus + "] Uppercase Letters"
-                + "\n[C: " + numeroDeLetraMinuscula.contagem + " | B: " + numeroDeLetraMinuscula.bonus + "] Lowercase Letters"
-                + "\n[C: " + numeroDeCaractereNumerico.contagem + " | B: " + numeroDeCaractereNumerico.bonus + "] Numbers"
-                + "\n[C: " + numeroDeCaractereEspecial.contagem + " | B: " + numeroDeCaractereEspecial.bonus + "] Symbols"
-                + "\n[C: " + numeroOuSimboloNoMeio.contagem + " | B: " + numeroOuSimboloNoMeio.bonus + "] Middle Numbers or Symbols"
-                + "\n[C: " + numeroDeRequerimentos.contagem + " | B: " + numeroDeRequerimentos.bonus + "] Requirements";
+                + "\n[C: " + incrementadorPeloNumeroDeCaracteres.contagem + " | B: " + incrementadorPeloNumeroDeCaracteres.bonus + "] Number of Characters"
+                + "\n[C: " + incrementadorPeloNumeroDeLetrasMaiusculas.contagem + " | B: " + incrementadorPeloNumeroDeLetrasMaiusculas.bonus + "] Uppercase Letters"
+                + "\n[C: " + incrementadorPeloNumeroDeLetrasMinusculas.contagem + " | B: " + incrementadorPeloNumeroDeLetrasMinusculas.bonus + "] Lowercase Letters"
+                + "\n[C: " + incrementadorPeloNumeroDeCaracteresNumericos.contagem + " | B: " + incrementadorPeloNumeroDeCaracteresNumericos.bonus + "] Numbers"
+                + "\n[C: " + incrementadorPeloNumeroDeCaracteresEspeciais.contagem + " | B: " + incrementadorPeloNumeroDeCaracteresEspeciais.bonus + "] Symbols"
+                + "\n[C: " + incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha.contagem + " | B: " + incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha.bonus + "] Middle Numbers or Symbols"
+                + "\n[C: " + incrementadorPeloNumeroDeRequerimentos.contagem + " | B: " + incrementadorPeloNumeroDeRequerimentos.bonus + "] Requirements";
     }
 }
 

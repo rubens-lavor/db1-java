@@ -1,20 +1,20 @@
 package original;
 
-public class NumeroDeCaractereEspecial extends IncrementaForcaDaSenha {
+public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorForcaDaSenha {
     String[] arrPwd;
 
-    public NumeroDeCaractereEspecial(String senha) {
+    public IncrementadorPeloNumeroDeCaracteresEspeciais(String senha) {
         peso = 6;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
-        calculoContagem();
-        calculoBonus();
+        calcularContagem();
+        calcularBonus();
 
         if (contagem > 0) checkRequerimentos();
     }
 
     @Override
-    public void calculoContagem() {
+    public void calcularContagem() {
         for (int i = 0; i < arrPwd.length; i++) {
             if (arrPwd[i].matches("[A-Z]")) {
             } else if (arrPwd[i].matches("[a-z]")) {
@@ -28,7 +28,7 @@ public class NumeroDeCaractereEspecial extends IncrementaForcaDaSenha {
     }
 
     @Override
-    public void calculoBonus() {
+    public void calcularBonus() {
         bonus = contagem * peso;
     }
 }

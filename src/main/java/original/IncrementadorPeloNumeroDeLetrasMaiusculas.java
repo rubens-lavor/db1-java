@@ -1,23 +1,23 @@
 package original;
 
-public class NumeroDeLetraMaiuscula extends IncrementaForcaDaSenha {
+public class IncrementadorPeloNumeroDeLetrasMaiusculas extends IncrementadorForcaDaSenha {
     String[] arrPwd;
 
-    public NumeroDeLetraMaiuscula(String senha) {
+    public IncrementadorPeloNumeroDeLetrasMaiusculas(String senha) {
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
 
         peso = 2;
 
-        calculoContagem();
-        calculoBonus();
+        calcularContagem();
+        calcularBonus();
 
         if (contagem > 0) checkRequerimentos();
     }
 
 
     @Override
-    public void calculoContagem() {
+    public void calcularContagem() {
         // String[] arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
 
         for (int i = 0; i < arrPwd.length; i++) {
@@ -28,7 +28,7 @@ public class NumeroDeLetraMaiuscula extends IncrementaForcaDaSenha {
     }
 
     @Override
-    public void calculoBonus() {
+    public void calcularBonus() {
         bonus = (senha.length() - contagem) * peso;
     }
 

@@ -1,20 +1,20 @@
 package original;
 
-public class NumeroOuSimboloNoMeio extends IncrementaForcaDaSenha {
+public class IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha extends IncrementadorForcaDaSenha {
     String[] arrPwd;
 
-    public NumeroOuSimboloNoMeio(String senha) {
+    public IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha(String senha) {
         peso = 2;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
 
-        calculoContagem();
-        calculoBonus();
+        calcularContagem();
+        calcularBonus();
 
     }
 
     @Override
-    public void calculoContagem() {
+    public void calcularContagem() {
 
 
         for (int i = 0; i < arrPwd.length; i++) {
@@ -34,7 +34,7 @@ public class NumeroOuSimboloNoMeio extends IncrementaForcaDaSenha {
     }
 
     @Override
-    public void calculoBonus() {
+    public void calcularBonus() {
         bonus = contagem * peso;
     }
 }
