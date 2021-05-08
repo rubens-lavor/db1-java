@@ -3,12 +3,16 @@ package original;
 public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorForcaDaSenha {
     String[] arrPwd;
 
+    int countSeqSymbol = 0;
+
     public IncrementadorPeloNumeroDeCaracteresEspeciais(String senha) {
         peso = 6;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
         calcularContagem();
         calcularBonus();
+
+        countSeqSymbol = sequencia(")!@#$%^&*()");
 
         if (contagem > 0) checkRequerimentos();
     }
