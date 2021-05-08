@@ -1,8 +1,7 @@
 package original;
 
-public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForcaDaSenha {
+public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais {
     private String[] arrPwd;
-    //protected double incrementDeductionOfRepeatedChars = 0.0;
     protected int countRepChar = 0;
 
     protected int countConsecutiveAlphaLC = 0;
@@ -17,9 +16,9 @@ public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForc
         calcularBonus();
 
         testeRepeticao();
-        testeConsecutivo();
 
-        countSeqAlpha = sequencia("abcdefghijklmnopqrstuvwxyz");
+        countSeqAlpha = calcularQuantidadeDeCaracteresSequenciais(Sequencia.LETRAS, senha);
+        countConsecutiveAlphaLC = calcularConsecutivo(Regex.MINUSCULA, arrPwd);
 
         if (contagem > 0) checkRequerimentos();
     }
@@ -39,40 +38,4 @@ public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForc
         bonus = (senha.length() - contagem) * peso;
     }
 
-
-    /*
-    private void testeRepeticao(){
-        for (int i = 0; i < arrPwd.length; i++) {
-            var bCharExists = false;
-            for (int j = 0; j < arrPwd.length; j++) {
-                if (arrPwd[i].equals(arrPwd[j]) && i != j) {
-                    bCharExists = true;
-                    incrementDeductionOfRepeatedChars += Math.abs(arrPwd.length / (j - i));
-                }
-            }
-            if (bCharExists) {
-                countRepChar++;
-                int countUniqueCharacters = arrPwd.length - countRepChar;
-                incrementDeductionOfRepeatedChars = countUniqueCharacters != 0 ?
-                        Math.ceil(incrementDeductionOfRepeatedChars / countUniqueCharacters) :
-                        Math.ceil(incrementDeductionOfRepeatedChars);
-            }
-        }
-    }
-
-     */
-
-    void testeConsecutivo() {
-        Integer nTmpAlphaLC = null;
-        for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[a-z]")) {
-                if (nTmpAlphaLC != null) {
-                    if (nTmpAlphaLC + 1 == i) {
-                        countConsecutiveAlphaLC++;
-                    }
-                }
-                nTmpAlphaLC = i;
-            }
-        }
-    }
 }

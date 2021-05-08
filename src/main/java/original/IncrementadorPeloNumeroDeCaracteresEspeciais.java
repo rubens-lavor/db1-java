@@ -1,6 +1,6 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorForcaDaSenha {
+public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais{
     String[] arrPwd;
 
     int countSeqSymbol = 0;
@@ -12,7 +12,7 @@ public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorF
         calcularContagem();
         calcularBonus();
 
-        countSeqSymbol = sequencia(")!@#$%^&*()");
+        countSeqSymbol = calcularQuantidadeDeCaracteresSequenciais(Sequencia.SIMBOLOS, senha);
 
         if (contagem > 0) checkRequerimentos();
     }
@@ -20,11 +20,12 @@ public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorF
     @Override
     public void calcularContagem() {
         for (int i = 0; i < arrPwd.length; i++) {
+            /*
             if (arrPwd[i].matches("[A-Z]")) {
             } else if (arrPwd[i].matches("[a-z]")) {
             } else if (arrPwd[i].matches("[0-9]")) { }
 
-            else if (arrPwd[i].matches("[^a-zA-Z0-9_]")) {
+            else*/ if (arrPwd[i].matches("[^a-zA-Z0-9_]")) {
                 contagem++;
             }
 

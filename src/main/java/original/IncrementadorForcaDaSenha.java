@@ -9,8 +9,6 @@ public abstract class IncrementadorForcaDaSenha {
     String[] arrPwd = {};
 
     protected static double incrementDeductionOfRepeatedChars = 0.0;
-    //private static int countRepChar = 0;
-    private static int countConsecutiveCaractere = 0;
     private static int indiceRequerimentos = 0;
 
 
@@ -50,66 +48,6 @@ public abstract class IncrementadorForcaDaSenha {
         }
 
         return countRepChar;
-    }
-
-    /*
-    protected int testeLetrasConsecutivas() {
-        Integer nTmpAlphaLC = null;
-        int countConsecutiveAlphaLC = 0;
-        for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[a-z]")) {
-                if (nTmpAlphaLC != null) {
-                    if (nTmpAlphaLC + 1 == i) {
-                        countConsecutiveAlphaLC++;
-                    }
-                }
-                nTmpAlphaLC = i;
-            }
-        }
-
-        return countConsecutiveAlphaLC;
-    }
-     */
-
-    int sequencia(String sequencia) {
-        int aux = 0;
-        /* Check for sequential alpha string patterns (forward and reverse) */
-        //String ALPHAS = "abcdefghijklmnopqrstuvwxyz";
-        int tamanho = sequencia.length() - 3;
-
-        for (int i = 0; i < tamanho; i++) {
-            String sFwd = sequencia.substring(i, i + 3);
-            String sRev = new StringBuilder(sFwd).reverse().toString();
-            if (senha.toLowerCase().contains(sFwd) || senha.toLowerCase().contains(sRev)) {
-                aux++;
-            }
-        }
-
-        /* Check for sequential numeric string patterns (forward and reverse) */
-        /*
-        for (int i = 0; i < 8; i++) {
-            String DIGITS = "01234567890";
-            String sFwd = DIGITS.substring(i, i + 3);
-            String sRev = new StringBuilder(sFwd).reverse().toString();
-            if (senha.toLowerCase().contains(sFwd) || senha.toLowerCase().contains(sRev)) {
-                countSeqNumber++;
-            }
-        }
-        */
-
-        /* Check for sequential symbol string patterns (forward and reverse) */
-        /*
-        for (int i = 0; i < 8; i++) {
-            String SYMBOLS = ")!@#$%^&*()";
-            String sFwd = SYMBOLS.substring(i, i + 3);
-            String sRev = new StringBuilder(sFwd).reverse().toString();
-            if (senha.toLowerCase().contains(sFwd) || senha.toLowerCase().contains(sRev)) {
-                countSeqSymbol++;
-            }
-        }
-         */
-
-        return aux;
     }
 
     public abstract void calcularContagem();

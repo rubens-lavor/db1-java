@@ -1,6 +1,6 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteresNumericos extends IncrementadorForcaDaSenha implements AnalisadorSequenciaDeCaracteres{
+public class IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais {
 
     String[] arrPwd;
     int countConsecutiveNumber = 0;
@@ -11,7 +11,7 @@ public class IncrementadorPeloNumeroDeCaracteresNumericos extends IncrementadorF
     protected int contagemSomenteNumeros = 0;
     protected int bonusSomenteNumeros = 0;
 
-    IncrementadorPeloNumeroDeCaracteresNumericos(String senha) {
+    IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos(String senha) {
         peso = 4;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
@@ -19,13 +19,8 @@ public class IncrementadorPeloNumeroDeCaracteresNumericos extends IncrementadorF
         calcularContagem();
         calcularBonus();
 
-        testeConsecutivo();
-
-
-
-        //countSeqNumber = sequencia("01234567890");
-
-        countSeqNumber = teste(Sequencia.NUMEROS, senha);
+        countSeqNumber = calcularQuantidadeDeCaracteresSequenciais(Sequencia.NUMEROS, senha);
+        countConsecutiveNumber = calcularConsecutivo(Regex.NUMERO, arrPwd);
 
         if (contagem > 0) {
             checkRequerimentos();
@@ -45,17 +40,4 @@ public class IncrementadorPeloNumeroDeCaracteresNumericos extends IncrementadorF
         bonus = contagem * peso;
     }
 
-    void testeConsecutivo() {
-        Integer nTmpNumber = null;
-        for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[0-9]")) {
-                if (nTmpNumber != null) {
-                    if (nTmpNumber + 1 == i) {
-                        countConsecutiveNumber++;
-                    }
-                }
-                nTmpNumber = i;
-            }
-        }
-    }
 }

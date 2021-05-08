@@ -10,7 +10,7 @@ public class VerificadorDeSenha {
     private final IncrementadorPeloNumeroDeCaracteres incrementadorPeloNumeroDeCaracteres;
     private final IncrementadorPeloNumeroDeLetrasMinusculas incrementadorPeloNumeroDeLetrasMinusculas;
     private final IncrementadorPeloNumeroDeLetrasMaiusculas incrementadorPeloNumeroDeLetrasMaiusculas;
-    private final IncrementadorPeloNumeroDeCaracteresNumericos incrementadorPeloNumeroDeCaracteresNumericos;
+    private final IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos incrementadorPeloNumeroDeCaracteresNumericos;
     private final IncrementadorPeloNumeroDeCaracteresEspeciais incrementadorPeloNumeroDeCaracteresEspeciais;
     private final IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha;
     private final IncrementadorPeloNumeroDeRequerimentos incrementadorPeloNumeroDeRequerimentos;
@@ -39,7 +39,7 @@ public class VerificadorDeSenha {
         incrementadorPeloNumeroDeCaracteres = new IncrementadorPeloNumeroDeCaracteres(senha);
         incrementadorPeloNumeroDeLetrasMaiusculas = new IncrementadorPeloNumeroDeLetrasMaiusculas(senha);
         incrementadorPeloNumeroDeLetrasMinusculas = new IncrementadorPeloNumeroDeLetrasMinusculas(senha);
-        incrementadorPeloNumeroDeCaracteresNumericos = new IncrementadorPeloNumeroDeCaracteresNumericos(senha);
+        incrementadorPeloNumeroDeCaracteresNumericos = new IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos(senha);
         incrementadorPeloNumeroDeCaracteresEspeciais = new IncrementadorPeloNumeroDeCaracteresEspeciais(senha);
         incrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha = new IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha(senha);
         incrementadorPeloNumeroDeRequerimentos = new IncrementadorPeloNumeroDeRequerimentos();
