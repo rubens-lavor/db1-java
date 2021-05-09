@@ -8,7 +8,6 @@ public class AnalisadorDeSenhaPeloNumeroDeCaracteres extends AnalisadorDeIndicad
             calcularContagem();
             calcularBonus();
 
-            //testeRepeticao();
             tamanhoDaSenha = contagem;
             if (senha.length() >= 8) incrementarRequerimentos();
         }
@@ -16,7 +15,6 @@ public class AnalisadorDeSenhaPeloNumeroDeCaracteres extends AnalisadorDeIndicad
 
         @Override
         public void calcularContagem() {
-
             contagem = senha.length();
         }
 

@@ -5,11 +5,10 @@ import enums.Sequencia;
 import interfaces.AnalisadorDeCaracteresSequenciais;
 
 public class AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
-    String[] arrPwd;
 
     public AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos(String senha) {
         peso = 4;
-        this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
+        this.vetorSenha = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
 
         calcularContagem();
@@ -18,7 +17,7 @@ public class AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos extends
         //testeRepeticao();
         contadorDeNumeros = contagem;
         contadorSequenciaDeNumeros = calcularQuantidadeDeCaracteresSequenciais(Sequencia.NUMEROS, senha);
-        contadorNumeroConsecutivo = calcularConsecutivo(Regex.NUMERO, arrPwd);
+        contadorNumeroConsecutivo = calcularConsecutivo(Regex.NUMERO, vetorSenha);
 
         if (contagem > 0) {
             incrementarRequerimentos();
@@ -26,8 +25,8 @@ public class AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos extends
     }
     @Override
     public void calcularContagem() {
-        for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[0-9]")) {
+        for (int i = 0; i < vetorSenha.length; i++) {
+            if (vetorSenha[i].matches("[0-9]")) {
                 contagem++;
             }
         }

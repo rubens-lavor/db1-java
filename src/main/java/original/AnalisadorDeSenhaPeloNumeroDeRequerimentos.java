@@ -9,12 +9,12 @@ public class AnalisadorDeSenhaPeloNumeroDeRequerimentos extends AnalisadorDeIndi
     }
 
     @Override
-    public void calcularContagem() {
+    protected void calcularContagem() {
         contagem = obterRequerimentos();
     }
 
     @Override
-    public void calcularBonus() {
+    protected void calcularBonus() {
         if (obterRequerimentos() <= 3) {
             bonus = 0;
         } else {

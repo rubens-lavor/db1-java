@@ -7,11 +7,11 @@ import java.util.EnumMap;
 
 public class Impressora {
 
-    EnumMap<Contagem, Integer> mapContagem;
-    EnumMap<Bonus, Integer> mapBonus;
-    String senha;
-    int forcaDaSenha;
-    String Complexidade;
+    private final EnumMap<Contagem, Integer> mapContagem;
+    private final EnumMap<Bonus, Integer> mapBonus;
+    private final String senha;
+    private final int forcaDaSenha;
+    private final String Complexidade;
 
     public Impressora(EnumMap<Contagem, Integer> mapContagem, EnumMap<Bonus, Integer> mapBonus, int forcaDaSenha, String Complexidade, String senha){
         this.mapContagem = mapContagem;
@@ -21,9 +21,6 @@ public class Impressora {
         this.senha = senha;
 
     }
-
-
-
 
     @Override
     public String toString() {

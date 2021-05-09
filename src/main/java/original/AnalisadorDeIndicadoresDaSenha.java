@@ -26,13 +26,6 @@ public abstract class AnalisadorDeIndicadoresDaSenha {
 
     protected static int contadorNumerosESimbolosNoMeioDaSenha = 0;
 
-
-    public int obterBonus(){
-        return bonus;
-    }
-    public int obterContagem() {
-        return contagem;
-    }
     protected void incrementarRequerimentos(){
         contadorRequerimentos++;
     }

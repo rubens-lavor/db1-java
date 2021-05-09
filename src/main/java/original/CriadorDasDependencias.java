@@ -14,7 +14,7 @@ public class CriadorDasDependencias implements ColecaoDeDependencias {
         atribuirValoresMapContagemEBonus();
     }
 
-    void alocarDependencias(String s) {
+    private void alocarDependencias(String s) {
         mapDependencias.put(Dependencias.ADSPNDC, new AnalisadorDeSenhaPeloNumeroDeCaracteres(s));
         mapDependencias.put(Dependencias.ADSPNDCE, new AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais(s));
         mapDependencias.put(Dependencias.ADSPNDCNENMDS, new AnalisadorDeSenhaPeloNumeroDeCaracteresNumericosEEspeciaisNoMeioDaSenha(s));
@@ -34,8 +34,7 @@ public class CriadorDasDependencias implements ColecaoDeDependencias {
     @Override
     public AnalisadorDeIndicadoresDaSenha retornarUmaDependencia(String get) {
         for (Map.Entry<Dependencias, Object> dependencia : mapDependencias.entrySet()) {
-            //dependencia.getValue()
-            if (dependencia.getKey().obterDependencias() == get) {
+            if (dependencia.getKey().obterDependencias().equals(get)) {
                 return (AnalisadorDeIndicadoresDaSenha) dependencia.getValue();
             }
         }

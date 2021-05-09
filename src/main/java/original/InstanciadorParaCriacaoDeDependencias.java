@@ -12,7 +12,6 @@ public class InstanciadorParaCriacaoDeDependencias {
     }
 
     public Impressora fabricarImpressora(EnumMap<Contagem, Integer> mapContagem, EnumMap<Bonus, Integer> mapBonus, int forca, String comp, String senha){
-
         Impressora impressora = new Impressora(mapContagem,mapBonus, forca, comp, senha );
         return impressora;
     }

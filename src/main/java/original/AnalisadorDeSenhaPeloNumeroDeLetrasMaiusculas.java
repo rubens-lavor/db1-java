@@ -4,19 +4,16 @@ import enums.Regex;
 import interfaces.AnalisadorDeCaracteresSequenciais;
 
 public class AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
-    private String[] arrPwd;
 
     public AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas(String senha) {
-        this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
+        this.vetorSenha = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
-
         peso = 2;
 
         calcularContagem();
         calcularBonus();
-        //testeRepeticao();
 
-        contadorLetraMaiusculaConsecutiva = calcularConsecutivo(Regex.MAIUSCULA, arrPwd);
+        contadorLetraMaiusculaConsecutiva = calcularConsecutivo(Regex.MAIUSCULA, vetorSenha);
         contadorLetraMaiuscula = contagem;
         if (contagem > 0) incrementarRequerimentos();
     }
@@ -24,8 +21,8 @@ public class AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas extends AnalisadorDeI
 
     @Override
     public void calcularContagem() {
-        for (int i = 0; i < arrPwd.length; i++) {
-            if (arrPwd[i].matches("[A-Z]")) {
+        for (int i = 0; i < vetorSenha.length; i++) {
+            if (vetorSenha[i].matches("[A-Z]")) {
                 contagem++;
             }
         }

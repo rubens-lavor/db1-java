@@ -24,7 +24,7 @@ public class AnalisadorDeSenhaPeloNumeroDeLetrasMinusculas extends AnalisadorDeI
 
 
     @Override
-    public void calcularContagem() {
+    protected void calcularContagem() {
         for (int i = 0; i < vetorSenha.length; i++) {
             if (vetorSenha[i].matches("[a-z]")) {
                 contagem++;
@@ -33,7 +33,7 @@ public class AnalisadorDeSenhaPeloNumeroDeLetrasMinusculas extends AnalisadorDeI
     }
 
     @Override
-    public void calcularBonus() {
+    protected void calcularBonus() {
         bonus = contagem == 0 ? 0 : (senha.length() - contagem) * peso;
     }
 
