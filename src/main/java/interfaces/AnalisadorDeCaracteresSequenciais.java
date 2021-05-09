@@ -1,4 +1,4 @@
-package original;
+package interfaces;
 
 import enums.Regex;
 import enums.Sequencia;

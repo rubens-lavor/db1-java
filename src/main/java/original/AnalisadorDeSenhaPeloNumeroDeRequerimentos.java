@@ -1,8 +1,8 @@
 package original;
 
-public class IncrementadorPeloNumeroDeRequerimentos extends AnalisadorDeIndicadoresDaSenha {
+public class AnalisadorDeSenhaPeloNumeroDeRequerimentos extends AnalisadorDeIndicadoresDaSenha {
 
-    public IncrementadorPeloNumeroDeRequerimentos() {
+    public AnalisadorDeSenhaPeloNumeroDeRequerimentos() {
         peso = 2;
         calcularContagem();
         calcularBonus();

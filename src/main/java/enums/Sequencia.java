@@ -1,4 +1,4 @@
-package original;
+package enums;
 
 public enum Sequencia {
     LETRAS("abcdefghijklmnopqrstuvwxyz"),

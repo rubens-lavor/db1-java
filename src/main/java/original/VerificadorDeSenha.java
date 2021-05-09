@@ -5,15 +5,15 @@ import enums.Contagem;
 
 import java.util.EnumMap;
 
-public class _VerificadorDeSenha {
+public class VerificadorDeSenha {
         private int forcaDaSenha = 0;
         private final String senha;
 
         private final EnumMap<Contagem, Integer> mapContagem;
         private final EnumMap<Bonus, Integer> mapBonus;
-        private final _Impressora impressora;
+        private final Impressora impressora;
 
-        public _VerificadorDeSenha(String senha, InstanciadorParaCriacaoDeDependencias _dependencias) {
+        public VerificadorDeSenha(String senha, InstanciadorParaCriacaoDeDependencias _dependencias) {
             this.senha = senha;
             var dependencias = _dependencias.fabricarInstanciaDeDependencias(senha);
 

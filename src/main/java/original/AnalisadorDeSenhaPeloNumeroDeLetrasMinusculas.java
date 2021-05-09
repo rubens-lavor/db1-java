@@ -1,8 +1,12 @@
 package original;
 
-public class IncrementadorPeloNumeroDeLetrasMinusculas extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
+import enums.Regex;
+import enums.Sequencia;
+import interfaces.AnalisadorDeCaracteresSequenciais;
 
-    public IncrementadorPeloNumeroDeLetrasMinusculas(String senha) {
+public class AnalisadorDeSenhaPeloNumeroDeLetrasMinusculas extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
+
+    public AnalisadorDeSenhaPeloNumeroDeLetrasMinusculas(String senha) {
         this.vetorSenha = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
         peso = 2;

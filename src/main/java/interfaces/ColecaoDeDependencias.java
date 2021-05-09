@@ -1,7 +1,8 @@
-package original;
+package interfaces;
 
 import enums.Bonus;
 import enums.Contagem;
+import enums.Dependencias;
 import original.AnalisadorDeIndicadoresDaSenha;
 
 import java.util.EnumMap;
@@ -10,11 +11,11 @@ import java.util.Map;
 
 public interface ColecaoDeDependencias {
 
-        Map<String, Object> mapDependencias = new HashMap<>();
+        EnumMap<Dependencias, Object> mapDependencias = new EnumMap<>(Dependencias.class);
         EnumMap<Contagem, Integer> mapContagem = new EnumMap<>(Contagem.class);
         EnumMap<Bonus, Integer> mapBonus = new EnumMap<>(Bonus.class);
 
-        default Map<String, Object> retornarMap(){
+        default EnumMap<Dependencias, Object> retornarMap(){
             return mapDependencias;
         }
         default EnumMap<Contagem, Integer> retornarMapContagem(){

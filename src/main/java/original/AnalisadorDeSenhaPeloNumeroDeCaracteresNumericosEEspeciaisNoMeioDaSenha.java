@@ -1,9 +1,9 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha extends AnalisadorDeIndicadoresDaSenha {
+public class AnalisadorDeSenhaPeloNumeroDeCaracteresNumericosEEspeciaisNoMeioDaSenha extends AnalisadorDeIndicadoresDaSenha {
     String[] arrPwd;
 
-    public IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha(String senha) {
+    public AnalisadorDeSenhaPeloNumeroDeCaracteresNumericosEEspeciaisNoMeioDaSenha(String senha) {
         peso = 2;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;

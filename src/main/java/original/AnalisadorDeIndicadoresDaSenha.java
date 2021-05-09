@@ -1,12 +1,12 @@
 package original;
 
-public abstract class IncrementadorForcaDaSenha {
+public abstract class AnalisadorDeIndicadoresDaSenha {
     protected int peso = 0;
     protected int contagem;
     protected int bonus;
     protected String senha = "";
 
-    String[] arrPwd = {};
+    String[] vetorSenha = {};
 
     protected static double incrementDeductionOfRepeatedChars = 0.0;
     protected static int contadorRequerimentos = 0;
@@ -43,17 +43,17 @@ public abstract class IncrementadorForcaDaSenha {
     }
 
     protected void verificarCaracteresRepetidos(){
-        for (int i = 0; i < arrPwd.length; i++) {
+        for (int i = 0; i < vetorSenha.length; i++) {
             var bCharExists = false;
-            for (int j = 0; j < arrPwd.length; j++) {
-                if (arrPwd[i].equals(arrPwd[j]) && i != j) {
+            for (int j = 0; j < vetorSenha.length; j++) {
+                if (vetorSenha[i].equals(vetorSenha[j]) && i != j) {
                     bCharExists = true;
-                    incrementDeductionOfRepeatedChars += Math.abs(arrPwd.length / (j - i));
+                    incrementDeductionOfRepeatedChars += Math.abs(vetorSenha.length / (j - i));
                 }
             }
             if (bCharExists) {
                 contadorCaracteresRepetidos++;
-                int countUniqueCharacters = arrPwd.length - contadorCaracteresRepetidos;
+                int countUniqueCharacters = vetorSenha.length - contadorCaracteresRepetidos;
                 incrementDeductionOfRepeatedChars = countUniqueCharacters != 0 ?
                         Math.ceil(incrementDeductionOfRepeatedChars / countUniqueCharacters) :
                         Math.ceil(incrementDeductionOfRepeatedChars);

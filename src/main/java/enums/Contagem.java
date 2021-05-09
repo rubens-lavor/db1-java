@@ -1,4 +1,4 @@
-package original;
+package enums;
 
 public enum Contagem {
    QNT_SIMBOLO("QuantidadeDeSimbolos"),

@@ -1,9 +1,12 @@
 package original;
 
-public class IncrementadorPeloNumeroDeLetrasMaiusculas extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
+import enums.Regex;
+import interfaces.AnalisadorDeCaracteresSequenciais;
+
+public class AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
     private String[] arrPwd;
 
-    public IncrementadorPeloNumeroDeLetrasMaiusculas(String senha) {
+    public AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas(String senha) {
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
 

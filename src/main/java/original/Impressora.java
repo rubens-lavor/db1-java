@@ -5,7 +5,7 @@ import enums.Contagem;
 
 import java.util.EnumMap;
 
-public class _Impressora {
+public class Impressora {
 
     EnumMap<Contagem, Integer> mapContagem;
     EnumMap<Bonus, Integer> mapBonus;
@@ -13,7 +13,7 @@ public class _Impressora {
     int forcaDaSenha;
     String Complexidade;
 
-    public _Impressora(EnumMap<Contagem, Integer> mapContagem, EnumMap<Bonus, Integer> mapBonus, int forcaDaSenha, String Complexidade, String senha){
+    public Impressora(EnumMap<Contagem, Integer> mapContagem, EnumMap<Bonus, Integer> mapBonus, int forcaDaSenha, String Complexidade, String senha){
         this.mapContagem = mapContagem;
         this.mapBonus = mapBonus;
         this.forcaDaSenha = forcaDaSenha;

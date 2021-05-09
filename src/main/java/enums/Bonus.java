@@ -1,4 +1,4 @@
-package original;
+package enums;
 
 public enum Bonus {
     QNT_SIMBOLO("BonusQuantidadeDeSimbolos"),

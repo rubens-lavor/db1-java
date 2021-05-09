@@ -1,8 +1,8 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteres extends IncrementadorForcaDaSenha {
+public class AnalisadorDeSenhaPeloNumeroDeCaracteres extends AnalisadorDeIndicadoresDaSenha {
 
-        public IncrementadorPeloNumeroDeCaracteres(String senha) {
+        public AnalisadorDeSenhaPeloNumeroDeCaracteres(String senha) {
             peso = 4;
             this.senha = senha;
             calcularContagem();

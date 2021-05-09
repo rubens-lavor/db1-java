@@ -1,4 +1,4 @@
-package original;
+package enums;
 
 public enum Regex {
     MAIUSCULA("[A-Z]"),

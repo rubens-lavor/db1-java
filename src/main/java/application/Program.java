@@ -1,5 +1,6 @@
 package application;
 
+import original.InstanciadorParaCriacaoDeDependencias;
 import original.*;
 
 
@@ -11,8 +12,8 @@ public class Program {
 
         var teste2 = new InstanciadorParaCriacaoDeDependencias();
 
-        _VerificadorDeSenha senha1;
-        senha1 = new _VerificadorDeSenha("123ab24abc4", teste2);
+        VerificadorDeSenha senha1;
+        senha1 = new VerificadorDeSenha("123ab24abc4", teste2);
 
     }
 }

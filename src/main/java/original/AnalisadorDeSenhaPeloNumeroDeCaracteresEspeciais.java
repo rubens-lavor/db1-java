@@ -1,9 +1,12 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais{
+import enums.Sequencia;
+import interfaces.AnalisadorDeCaracteresSequenciais;
+
+public class AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
     String[] arrPwd;
 
-    public IncrementadorPeloNumeroDeCaracteresEspeciais(String senha) {
+    public AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais(String senha) {
         peso = 6;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;

@@ -1,8 +1,9 @@
-package fabrica_dependencias;
+package original;
 
 import enums.Bonus;
 import enums.Contagem;
-import original.*;
+import enums.Dependencias;
+import interfaces.ColecaoDeDependencias;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -14,15 +15,13 @@ public class CriadorDasDependencias implements ColecaoDeDependencias {
     }
 
     void alocarDependencias(String s) {
-
-        mapDependencias.put("IPNDC", new AnalisadorDeSenhaPeloNumeroDeCaracteres(s));
-        mapDependencias.put("IPNDCE", new AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais(s));
-        mapDependencias.put("IPNDCENMS", new AnalisadorDeSenhaPeloNumeroDeCaracteresNumericosEEspeciaisNoMeioDaSenha(s));
-        mapDependencias.put("IPNDCSN", new AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos(s));
-        mapDependencias.put("IPNDCSMa", new AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas(s));
-        mapDependencias.put("IPNDCSMi", new AnalisadorDeSenhaPeloNumeroDeLetrasMinusculas(s));
-        mapDependencias.put("IPNDR", new AnalisadorDeSenhaPeloNumeroDeRequerimentos());
-
+        mapDependencias.put(Dependencias.ADSPNDC, new AnalisadorDeSenhaPeloNumeroDeCaracteres(s));
+        mapDependencias.put(Dependencias.ADSPNDCE, new AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais(s));
+        mapDependencias.put(Dependencias.ADSPNDCNENMDS, new AnalisadorDeSenhaPeloNumeroDeCaracteresNumericosEEspeciaisNoMeioDaSenha(s));
+        mapDependencias.put(Dependencias.ADSPNDCSN, new AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos(s));
+        mapDependencias.put(Dependencias.ADSPNDLMa, new AnalisadorDeSenhaPeloNumeroDeLetrasMaiusculas(s));
+        mapDependencias.put(Dependencias.ADSPNDLMi, new AnalisadorDeSenhaPeloNumeroDeLetrasMinusculas(s));
+        mapDependencias.put(Dependencias.ADSPNDR, new AnalisadorDeSenhaPeloNumeroDeRequerimentos());
     }
 
     @Override
@@ -34,8 +33,9 @@ public class CriadorDasDependencias implements ColecaoDeDependencias {
 
     @Override
     public AnalisadorDeIndicadoresDaSenha retornarUmaDependencia(String get) {
-        for (Map.Entry<String, Object> dependencia : mapDependencias.entrySet()) {
-            if (dependencia.getKey() == get) {
+        for (Map.Entry<Dependencias, Object> dependencia : mapDependencias.entrySet()) {
+            //dependencia.getValue()
+            if (dependencia.getKey().obterDependencias() == get) {
                 return (AnalisadorDeIndicadoresDaSenha) dependencia.getValue();
             }
         }
@@ -84,13 +84,14 @@ public class CriadorDasDependencias implements ColecaoDeDependencias {
 
 
         /*Adicions bonus*/
+
         mapBonus.put(Bonus.TAM_SENHA, AnalisadorDeIndicadoresDaSenha.tamanhoDaSenha *4);
-        mapBonus.put(Bonus.QNT_LETRA_MAIUSC, retornarUmaDependencia("IPNDCSMa").bonus);
-        mapBonus.put(Bonus.QNT_LETRA_MINUSC, retornarUmaDependencia("IPNDCSMi").bonus);
+        mapBonus.put(Bonus.QNT_LETRA_MAIUSC, retornarUmaDependencia(Dependencias.ADSPNDLMa.obterDependencias()).bonus);
+        mapBonus.put(Bonus.QNT_LETRA_MINUSC, retornarUmaDependencia(Dependencias.ADSPNDLMi.obterDependencias()).bonus);
         mapBonus.put(Bonus.QNT_NUMERO, AnalisadorDeIndicadoresDaSenha.contadorDeNumeros * 4);
-        mapBonus.put(Bonus.QNT_NUMERO_OU_SIMBOLO_NO_MEIO, retornarUmaDependencia("IPNDCENMS").bonus);
+        mapBonus.put(Bonus.QNT_NUMERO_OU_SIMBOLO_NO_MEIO, retornarUmaDependencia(Dependencias.ADSPNDCNENMDS.obterDependencias()).bonus);
         mapBonus.put(Bonus.QNT_SIMBOLO, AnalisadorDeIndicadoresDaSenha.contadorDeSimbolos * 6);
-        mapBonus.put(Bonus.QNT_REQUERIMENTOS, retornarUmaDependencia("IPNDR").bonus);
+        mapBonus.put(Bonus.QNT_REQUERIMENTOS, retornarUmaDependencia(Dependencias.ADSPNDR.obterDependencias()).bonus);
 
 
         /*Deductions bonus*/

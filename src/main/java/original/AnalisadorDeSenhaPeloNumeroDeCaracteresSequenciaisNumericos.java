@@ -1,9 +1,13 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
+import enums.Regex;
+import enums.Sequencia;
+import interfaces.AnalisadorDeCaracteresSequenciais;
+
+public class AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
     String[] arrPwd;
 
-    IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos(String senha) {
+    public AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos(String senha) {
         peso = 4;
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
