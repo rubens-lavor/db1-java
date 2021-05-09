@@ -1,6 +1,6 @@
 package original;
 
-public class IncrementadorPeloNumeroDeRequerimentos extends IncrementadorForcaDaSenha{
+public class IncrementadorPeloNumeroDeRequerimentos extends AnalisadorDeIndicadoresDaSenha {
 
     public IncrementadorPeloNumeroDeRequerimentos() {
         peso = 2;

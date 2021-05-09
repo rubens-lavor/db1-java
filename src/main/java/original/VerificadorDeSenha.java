@@ -1,5 +1,8 @@
 package original;
 
+import enums.Bonus;
+import enums.Contagem;
+
 import java.util.EnumMap;
 
 public class _VerificadorDeSenha {

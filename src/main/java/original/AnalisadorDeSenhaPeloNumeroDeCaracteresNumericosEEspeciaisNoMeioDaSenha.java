@@ -1,6 +1,6 @@
 package original;
 
-public class IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha extends IncrementadorForcaDaSenha {
+public class IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha extends AnalisadorDeIndicadoresDaSenha {
     String[] arrPwd;
 
     public IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha(String senha) {
@@ -10,7 +10,7 @@ public class IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha
 
         calcularContagem();
         calcularBonus();
-        countNumerAndSymbol = contagem;
+        contadorNumerosESimbolosNoMeioDaSenha = contagem;
     }
 
     @Override

@@ -1,5 +1,8 @@
 package original;
 
+import enums.Regex;
+import enums.Sequencia;
+
 public interface AnalisadorDeCaracteresSequenciais {
 
     default int calcularQuantidadeDeCaracteresSequenciais(Sequencia _sequencia, String palavra){

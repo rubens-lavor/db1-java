@@ -9,8 +9,8 @@ public class IncrementadorPeloNumeroDeCaracteres extends IncrementadorForcaDaSen
             calcularBonus();
 
             //testeRepeticao();
-            countLength = contagem;
-            if (senha.length() >= 8) checkRequerimentos();
+            tamanhoDaSenha = contagem;
+            if (senha.length() >= 8) incrementarRequerimentos();
         }
 
 

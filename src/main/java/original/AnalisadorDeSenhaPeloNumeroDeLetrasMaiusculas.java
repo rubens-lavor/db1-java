@@ -1,6 +1,6 @@
 package original;
 
-public class IncrementadorPeloNumeroDeLetrasMaiusculas extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais {
+public class IncrementadorPeloNumeroDeLetrasMaiusculas extends AnalisadorDeIndicadoresDaSenha implements AnalisadorDeCaracteresSequenciais {
     private String[] arrPwd;
 
     public IncrementadorPeloNumeroDeLetrasMaiusculas(String senha) {
@@ -13,9 +13,9 @@ public class IncrementadorPeloNumeroDeLetrasMaiusculas extends IncrementadorForc
         calcularBonus();
         //testeRepeticao();
 
-        countConsecutiveAlphaUC = calcularConsecutivo(Regex.MAIUSCULA, arrPwd);
-        countAlphaUC = contagem;
-        if (contagem > 0) checkRequerimentos();
+        contadorLetraMaiusculaConsecutiva = calcularConsecutivo(Regex.MAIUSCULA, arrPwd);
+        contadorLetraMaiuscula = contagem;
+        if (contagem > 0) incrementarRequerimentos();
     }
 
 

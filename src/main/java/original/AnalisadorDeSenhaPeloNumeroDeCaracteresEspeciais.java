@@ -10,11 +10,11 @@ public class IncrementadorPeloNumeroDeCaracteresEspeciais extends IncrementadorF
         calcularContagem();
         calcularBonus();
 
-        countSymbol = contagem;
-        countSeqSymbol = calcularQuantidadeDeCaracteresSequenciais(Sequencia.SIMBOLOS, senha);
+        contadorDeSimbolos = contagem;
+        contadorSequenciaDeSimbolos = calcularQuantidadeDeCaracteresSequenciais(Sequencia.SIMBOLOS, senha);
         //testeRepeticao();
 
-        if (contagem > 0) checkRequerimentos();
+        if (contagem > 0) incrementarRequerimentos();
     }
 
     @Override

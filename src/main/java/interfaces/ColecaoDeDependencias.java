@@ -1,5 +1,9 @@
 package original;
 
+import enums.Bonus;
+import enums.Contagem;
+import original.AnalisadorDeIndicadoresDaSenha;
+
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +23,7 @@ public interface ColecaoDeDependencias {
         default EnumMap<Bonus, Integer> retornarMapBonus(){ return mapBonus; }
 
         int calcularSomatorioDeBonus();
-        IncrementadorForcaDaSenha retornarUmaDependencia(String get);
+        AnalisadorDeIndicadoresDaSenha retornarUmaDependencia(String get);
         void atribuirValoresMapContagemEBonus();
 }
 
