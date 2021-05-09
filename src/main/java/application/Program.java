@@ -1,13 +1,18 @@
 package application;
 
-import original.VerificadorDeSenha;
+import original.*;
+
 
 public class Program {
+
     public static void main(String[] args) {
 
-        VerificadorDeSenha senha1;
-        senha1 = new VerificadorDeSenha("rubens123AçÇj");
+        //var teste = new MyCreatorFactore();
 
-        System.out.print(senha1.toString());
+        var teste2 = new InstanciadorParaCriacaoDeDependencias();
+
+        _VerificadorDeSenha senha1;
+        senha1 = new _VerificadorDeSenha("123ab24abc4", teste2);
+
     }
 }

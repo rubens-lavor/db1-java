@@ -1,11 +1,6 @@
 package original;
 
 public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais {
-    private String[] arrPwd;
-    protected int countRepChar = 0;
-
-    protected int countConsecutiveAlphaLC = 0;
-    int countSeqAlpha = 0;
 
     public IncrementadorPeloNumeroDeLetrasMinusculas(String senha) {
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
@@ -19,7 +14,7 @@ public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForc
 
         countSeqAlpha = calcularQuantidadeDeCaracteresSequenciais(Sequencia.LETRAS, senha);
         countConsecutiveAlphaLC = calcularConsecutivo(Regex.MINUSCULA, arrPwd);
-
+        countAlphaLC = contagem;
         if (contagem > 0) checkRequerimentos();
     }
 
@@ -35,7 +30,7 @@ public class IncrementadorPeloNumeroDeLetrasMinusculas extends IncrementadorForc
 
     @Override
     public void calcularBonus() {
-        bonus = (senha.length() - contagem) * peso;
+        bonus = contagem == 0 ? 0 : (senha.length() - contagem) * peso;
     }
 
 }

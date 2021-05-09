@@ -1,15 +1,7 @@
 package original;
 
 public class IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais {
-
     String[] arrPwd;
-    int countConsecutiveNumber = 0;
-    int countSeqNumber = 0;
-
-
-    /*Deductions*/
-    protected int contagemSomenteNumeros = 0;
-    protected int bonusSomenteNumeros = 0;
 
     IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos(String senha) {
         peso = 4;
@@ -19,6 +11,8 @@ public class IncrementadorPeloNumeroDeCaracteresSequenciaisNumericos extends Inc
         calcularContagem();
         calcularBonus();
 
+        //testeRepeticao();
+        countNumber = contagem;
         countSeqNumber = calcularQuantidadeDeCaracteresSequenciais(Sequencia.NUMEROS, senha);
         countConsecutiveNumber = calcularConsecutivo(Regex.NUMERO, arrPwd);
 

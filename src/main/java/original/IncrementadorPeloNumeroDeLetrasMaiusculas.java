@@ -3,8 +3,6 @@ package original;
 public class IncrementadorPeloNumeroDeLetrasMaiusculas extends IncrementadorForcaDaSenha implements AnalisadorDeCaracteresSequenciais {
     private String[] arrPwd;
 
-    protected int countConsecutiveAlphaUC = 0;
-
     public IncrementadorPeloNumeroDeLetrasMaiusculas(String senha) {
         this.arrPwd = senha.replaceAll("\\s+", "").split("\\s*");
         this.senha = senha;
@@ -13,10 +11,10 @@ public class IncrementadorPeloNumeroDeLetrasMaiusculas extends IncrementadorForc
 
         calcularContagem();
         calcularBonus();
-        testeRepeticao();
+        //testeRepeticao();
 
         countConsecutiveAlphaUC = calcularConsecutivo(Regex.MAIUSCULA, arrPwd);
-
+        countAlphaUC = contagem;
         if (contagem > 0) checkRequerimentos();
     }
 
@@ -32,7 +30,7 @@ public class IncrementadorPeloNumeroDeLetrasMaiusculas extends IncrementadorForc
 
     @Override
     public void calcularBonus() {
-        bonus = (senha.length() - contagem) * peso;
+        bonus = contagem == 0 ? 0 : (senha.length() - contagem) * peso;
     }
 
 }

@@ -10,18 +10,14 @@ public class IncrementadorPeloNumeroDeCaracteresEspeciaisENumericosNoMeioDaSenha
 
         calcularContagem();
         calcularBonus();
-
+        countNumerAndSymbol = contagem;
     }
 
     @Override
     public void calcularContagem() {
 
         for (int i = 0; i < arrPwd.length; i++) {
-            /*
-            if (arrPwd[i].matches("[A-Z]")) { }
-            else if (arrPwd[i].matches("[a-z]")) { }
-
-            else*/ if (arrPwd[i].matches("[0-9]")) {
+         if (arrPwd[i].matches("[0-9]")) {
                 if (i > 0 && i < arrPwd.length - 1) {
                     contagem++;
                 }

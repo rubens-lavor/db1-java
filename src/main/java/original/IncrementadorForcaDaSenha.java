@@ -9,7 +9,22 @@ public abstract class IncrementadorForcaDaSenha {
     String[] arrPwd = {};
 
     protected static double incrementDeductionOfRepeatedChars = 0.0;
-    private static int indiceRequerimentos = 0;
+    protected static int indiceRequerimentos = 0;
+
+    protected static int countSymbol = 0;
+    protected static int countNumber = 0;
+    protected static int countLength = 0;
+    protected static int countAlphaLC = 0;
+    protected static int countAlphaUC = 0;
+    protected static int countRepChar = 0;
+    protected static int countConsecutiveAlphaUC = 0;
+    protected static int countConsecutiveAlphaLC = 0;
+    protected static int countConsecutiveNumber = 0;
+    protected static int countSeqAlpha = 0;
+    protected static int countSeqNumber = 0;
+    protected static int countSeqSymbol = 0;
+
+    protected static int countNumerAndSymbol = 0;
 
 
     public int obterBonus(){
@@ -28,12 +43,12 @@ public abstract class IncrementadorForcaDaSenha {
         return indiceRequerimentos;
     }
 
-    protected int testeRepeticao(){
-        int countRepChar = 0;
+
+    protected void testeRepeticao(){
         for (int i = 0; i < arrPwd.length; i++) {
             var bCharExists = false;
             for (int j = 0; j < arrPwd.length; j++) {
-                if (arrPwd[i].equals(arrPwd[j]) && i != j) { /* repeat character exists */
+                if (arrPwd[i].equals(arrPwd[j]) && i != j) {
                     bCharExists = true;
                     incrementDeductionOfRepeatedChars += Math.abs(arrPwd.length / (j - i));
                 }
@@ -47,8 +62,8 @@ public abstract class IncrementadorForcaDaSenha {
             }
         }
 
-        return countRepChar;
     }
+
 
     public abstract void calcularContagem();
     public abstract void calcularBonus();

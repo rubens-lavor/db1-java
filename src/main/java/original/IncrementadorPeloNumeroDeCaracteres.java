@@ -2,16 +2,14 @@ package original;
 
 public class IncrementadorPeloNumeroDeCaracteres extends IncrementadorForcaDaSenha {
 
-        int countRepChar = 0;
-
         public IncrementadorPeloNumeroDeCaracteres(String senha) {
             peso = 4;
             this.senha = senha;
             calcularContagem();
             calcularBonus();
 
-            countRepChar = testeRepeticao();
-
+            //testeRepeticao();
+            countLength = contagem;
             if (senha.length() >= 8) checkRequerimentos();
         }
 
