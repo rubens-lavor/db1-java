@@ -12,3 +12,10 @@ Esta atividade consiste na criação de um "ambiente" pra você escrever código
 - [x] Crie um projeto Java baseado em Maven
 - [x] Suba esse "esqueleto" para o seu repositório
 
+
+## Atividade 2
+
+- [x] Desenvolva no ambiente entregue previamente uma implementação para o validador de senha
+  
+- [ ] Para cada classe de produção, implemente os testes de unidade
+
