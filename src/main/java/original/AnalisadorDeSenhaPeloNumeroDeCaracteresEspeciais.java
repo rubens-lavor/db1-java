@@ -9,7 +9,7 @@ public class AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais extends Analisador
     public AnalisadorDeSenhaPeloNumeroDeCaracteresEspeciais(String senha) {
         peso = 6;
         this.vetorSenha = senha.replaceAll("\\s+", "").split("\\s*");
-        this.senha = senha;
+        this.senha = senha; /*Necessário setar a senha?*/
         calcularContagem();
         calcularBonus();
 

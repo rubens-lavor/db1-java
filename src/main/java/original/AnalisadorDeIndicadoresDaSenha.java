@@ -35,6 +35,7 @@ public abstract class AnalisadorDeIndicadoresDaSenha {
         return contadorRequerimentos;
     }
 
+    /* Tirar daqui */
     protected void verificarCaracteresRepetidos(){
         for (int i = 0; i < vetorSenha.length; i++) {
             var bCharExists = false;

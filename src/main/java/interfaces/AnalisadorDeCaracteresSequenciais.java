@@ -4,7 +4,7 @@ import enums.Regex;
 import enums.Sequencia;
 
 public interface AnalisadorDeCaracteresSequenciais {
-
+    /*Refatorar!*/
     default int calcularQuantidadeDeCaracteresSequenciais(Sequencia _sequencia, String palavra){
 
         String sequencia = _sequencia.obterSequencia();
