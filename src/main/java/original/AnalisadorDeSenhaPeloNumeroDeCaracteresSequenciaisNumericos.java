@@ -14,7 +14,6 @@ public class AnalisadorDeSenhaPeloNumeroDeCaracteresSequenciaisNumericos extends
         calcularContagem();
         calcularBonus();
 
-        //testeRepeticao();
         contadorDeNumeros = contagem;
         contadorSequenciaDeNumeros = calcularQuantidadeDeCaracteresSequenciais(Sequencia.NUMEROS, senha);
         contadorNumeroConsecutivo = calcularConsecutivo(Regex.NUMERO, vetorSenha);
